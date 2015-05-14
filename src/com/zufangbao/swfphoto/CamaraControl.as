@@ -129,6 +129,7 @@ package com.zufangbao.swfphoto
 			//调用
 			ExternalInterface.addCallback("doSnap", this.doSnap);
 			ExternalInterface.addCallback("resetCamera", this.resetCamera);
+			ExternalInterface.addCallback("closeCamera", this.closeCamera);		
 			ExternalInterface.addCallback("doUpload", this.doUpload);
 		}
 		/**
@@ -182,6 +183,17 @@ package com.zufangbao.swfphoto
 			this.stage.addChild(this.video);
 		}
 		/**
+		 * 关闭摄像头
+		 */
+		private function closeCamera(): void {
+			if (!this.hasCamera) return; //没有摄像头，不处理
+			if (this.camera == null) return; //如果摄像头已关闭，不处理
+			this.camera = Camera.getCamera(null);
+			this.camera = null;						
+			this.video.attachCamera(null);
+			return;
+		}
+		/**
 		 * 初始化上传
 		 */
 		private function initUpload():void {
@@ -208,6 +220,7 @@ package com.zufangbao.swfphoto
 		 */
 		private function doSnap():Boolean {
 			if (!this.hasCamera) return false;//没有摄像头，不处理
+			if (this.camera == null) return false; //如果摄像头已关闭，不处理
 			if (!this.stage.contains(this.video)) return false;//如果当前已经是拍照状态，不允许重复拍照
 			if (this.doUploading) return false;//正在上传的话，不允许拍照
 			ExternalCall.snapped(this.snapped_Callback);
@@ -223,6 +236,7 @@ package com.zufangbao.swfphoto
 		 */
 		private function resetCamera():Boolean {
 			if (!this.hasCamera) return false;//没有摄像头，不处理
+			if (this.camera == null) return false; //如果摄像头已关闭，不处理
 			if (this.doUploading) return false;//正在上传的话，不允许重置
 			if (!this.stage.contains(this.photoImage)) return false;
 			this.stage.removeChild(this.photoImage);
@@ -250,6 +264,7 @@ package com.zufangbao.swfphoto
 		/**执行上传照片*/
 		private function doUpload():Boolean {
 			if (!this.hasCamera) return false;//没有摄像头，不处理
+			if (this.camera == null) return false; //如果摄像头已关闭，不处理
 			if (!this.stage.contains(this.photoImage)) return false;
 			if (this.doUploading) return false;//正在上传的话，不允许重复上传
 			this.doUploading = true;//表示正在上传

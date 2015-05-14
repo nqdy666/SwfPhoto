@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'2013/5/17'</value>
+      <value>'2015/5/14'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -34,16 +34,16 @@
     <omit-trace-statements>true</omit-trace-statements>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
-      <path-element>D:\Works\git\baoyusheng@zufangbao.com\SwfPhoto\src</path-element>
-      <path-element>D:\Works\git\baoyusheng@zufangbao.com\SwfPhoto\lib</path-element>
-      <path-element>D:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
+      <path-element>F:\FlashDevelopWorkspaces\SwfPhoto\src</path-element>
+      <path-element>F:\FlashDevelopWorkspaces\SwfPhoto\lib</path-element>
+      <path-element>E:\Program Files\FlashDevelop-4.7.2\Library\AS3\classes</path-element>
     </source-path>
     <library-path append="true">
-      <path-element>D:\Works\git\baoyusheng@zufangbao.com\SwfPhoto\lib\fl.swc</path-element>
+      <path-element>F:\FlashDevelopWorkspaces\SwfPhoto\lib\fl.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>D:\Works\git\baoyusheng@zufangbao.com\SwfPhoto\src\com\zufangbao\swfphoto\CamaraControl.as</path-element>
+    <path-element>F:\FlashDevelopWorkspaces\SwfPhoto\src\com\zufangbao\swfphoto\CamaraControl.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>

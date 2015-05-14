@@ -204,6 +204,13 @@ SWFPhoto.prototype.resetCamera = function () {
 SWFPhoto.prototype.doUpload = function () {
 	this.callFlash("doUpload");
 };
+/**
+ * 关闭摄像头
+ */
+SWFPhoto.prototype.closeCamera = function () {
+	this.callFlash("closeCamera");
+};
+
 // Private: This event is called by Flash when it has finished loading. Don't modify this.
 // Use the SWFPhoto_loaded_handler event setting to execute custom code when SWFPhoto has loaded.
 SWFPhoto.prototype.flashReady = function () {

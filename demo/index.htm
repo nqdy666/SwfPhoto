@@ -1,5 +1,5 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>SWF拍照Demo -- 租房宝</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -18,6 +18,7 @@
 				<input type="button" value="拍照"/>
 				<input type="button" value="重拍"/>
 				<input type="button" value="上传"/>
+				<input type="button" value="关闭摄像头"/>
 			</div>
 			<div>
 				<a href="http://www.zufangbao.com" target="_blank">租房宝-网上轻松付房租</a>
@@ -67,6 +68,7 @@
 	buttons.eq(0).click(function(){swfPhoto.doSnap();});
 	buttons.eq(1).click(function(){swfPhoto.resetCamera();});
 	buttons.eq(2).click(function(){swfPhoto.doUpload();});
+	buttons.eq(3).click(function(){swfPhoto.closeCamera();});
 </script>
 	</body>
 </html>
